@@ -13,7 +13,7 @@ const AddProduct = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('https://backend-8l1d.onrender.com');
+        const res = await axios.get('https://backend-2-lnn5.onrender.com');
         setProducts(res.data);
       } catch (err) {
         console.error(err);
@@ -25,7 +25,7 @@ const AddProduct = () => {
   const deleteProduct = async (id) => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       try {
-        await axios.delete(`https://backend-8l1d.onrender.com/${id}`);
+        await axios.delete(`https://backend-2-lnn5.onrender.com/${id}`);
         setProducts(products.filter((product) => product._id !== id));
       } catch (err) {
         console.error('Error deleting product:', err);
@@ -35,7 +35,7 @@ const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://backend-8l1d.onrender.com', formData);
+      await axios.post('https://backend-2-lnn5.onrender.com', formData);
       alert('Product added successfully!');
       setFormData({ name: '', description: '', price: '', image: '' });
     } catch (err) {
